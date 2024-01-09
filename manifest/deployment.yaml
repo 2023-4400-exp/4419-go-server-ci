@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: go-server-ci
+  name: go-server-ci
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: go-server-ci
+  template:
+    metadata:
+      labels:
+        app: go-server-ci
+    spec:
+      containers:
+      - image: touiseimiya/go-server-ci
+        name: go-server-ci
